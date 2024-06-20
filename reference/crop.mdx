@@ -1,0 +1,121 @@
+---
+title: "URL Expired"
+description: "Information about URL expiration and image cropping dimensions"
+---
+| time | status | user agent |     |
+| --- | --- | --- | --- |
+| Make a request to see history. |     |     |     |
+
+#### URL Expired
+
+The URL for this request expired after 30 days.
+
+Crop an image to fill the given dimensions. The image will first be resized to it’s smallest possible size that will fill the entire given dimensions, preserving it’s aspect ratio. The image is then centered within the given dimensions, and any part of the image that doesn’t fit is removed. The same amount is trimmed from each side of the image in the cropping dimension.
+
+url
+
+string
+
+required
+
+The URL of the image to proxy. The URL must be url-encoded to ensure that Embedly retrieves the correct link.
+
+errorurl
+
+string
+
+The URL of the fall back image to use when url fails. The URL must be url-encoded to ensure that Embedly retrieves the correct link.
+
+width
+
+int32
+
+required
+
+The width that the image should fill.
+
+height
+
+int32
+
+required
+
+The height that the image should fill.
+
+grow
+
+boolean
+
+Set to true if growing the image is allowed. Otherwise the image will never expand beyond it’s original dimensions, making width and height behave like max width and max height.
+
+truefalse
+
+animate
+
+boolean
+
+Setting animate to false will convert the image to the first frame of animation for animated images. Setting this value on non-animated images will have non effect and is safe to do.
+
+truefalse
+
+compresspng
+
+boolean
+
+Will run images through pngcompressor. Increases response time.
+
+truefalse
+
+quality
+
+int32
+
+Quality of the image between 1 and 95.
+
+Accept
+
+string
+
+Please set an "Accept: image/\*" header when you programmatically make requests to "i.embed.ly" to receive raw image data. Without this, the API responds with an HTML wrapped image tag (security).
+
+# 200200
+
+json
+
+# 400400
+
+object
+
+Did this page help you?
+
+Yes
+
+No
+
+ShellNodeRubyPHPPython
+
+xxxxxxxxxx
+
+1
+
+curl \--request GET \\
+
+2
+
+     \--url 'https://i.embed.ly/1/display/crop?grow=false&animate=true&compresspng=false' \\
+
+3
+
+     \--header 'accept: text/plain'
+
+Choose an example:
+
+application/json
+
+400 - Result
+
+Did this page help you?
+
+Yes
+
+No
