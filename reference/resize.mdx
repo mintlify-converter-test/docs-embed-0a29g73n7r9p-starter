@@ -1,0 +1,117 @@
+---
+title: "URL Expired Error"
+description: "Details about the expiration of a URL and handling parameters."
+---
+| time | status | user agent |     |
+| --- | --- | --- | --- |
+| Retrieving recent requests… |     |     |     |
+
+LoadingLoading…
+
+#### URL Expired
+
+The URL for this request expired after 30 days.
+
+url
+
+string
+
+required
+
+The URL of the image to proxy. The URL must be url-encoded to ensure that Embedly retrieves the correct link.
+
+errorurl
+
+string
+
+The URL of the fall back image to use when url fails. The URL must be url-encoded to ensure that Embedly retrieves the correct link.
+
+width
+
+int32
+
+The width that the image should fill.
+
+height
+
+int32
+
+The height that the image should fill.
+
+grow
+
+boolean
+
+Set to true if growing the image is allowed. Otherwise the image will never expand beyond it’s original dimensions, making width and height behave like max width and max height.
+
+truefalse
+
+animate
+
+boolean
+
+Setting animate to false will convert the image to the first frame of animation for animated images. Setting this value on non-animated images will have non effect and is safe to do.
+
+truefalse
+
+compresspng
+
+boolean
+
+Will run images through pngcompressor. Increases response time.
+
+truefalse
+
+quality
+
+int32
+
+Quality of the image between 1 and 95.
+
+Accept
+
+string
+
+Please set an "Accept: image/\*" header when you programmatically make requests to "i.embed.ly" to receive raw image data. Without this, the API responds with an HTML wrapped image tag (security).
+
+# 200200
+
+json
+
+# 400400
+
+object
+
+Did this page help you?
+
+Yes
+
+No
+
+ShellNodeRubyPHPPython
+
+xxxxxxxxxx
+
+1
+
+curl \--request GET \\
+
+2
+
+     \--url 'https://i.embed.ly/1/display/resize?grow=false&animate=true&compresspng=false' \\
+
+3
+
+     \--header 'accept: text/plain'
+
+Choose an example:
+
+application/json
+
+400 - Result
+
+Did this page help you?
+
+Yes
+
+No
